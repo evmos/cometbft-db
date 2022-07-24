@@ -41,6 +41,11 @@ test-badgerdb:
 	@go test $(PACKAGES) -tags badgerdb -v
 .PHONY: test-badgerdb
 
+test-pebble:
+	@echo "--> Running go test"
+	@go test $(PACKAGES) -tags pebbledb -v
+
+
 test-all:
 	@echo "--> Running go test"
 	@go test $(PACKAGES) -tags cleveldb,boltdb,rocksdb,badgerdb -v
